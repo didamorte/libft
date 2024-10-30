@@ -1,65 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diogribe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:26:42 by diogribe          #+#    #+#             */
-/*   Updated: 2024/10/28 17:08:10 by diogribe         ###   ########.fr       */
+/*   Created: 2024/10/30 14:40:24 by diogribe          #+#    #+#             */
+/*   Updated: 2024/10/30 14:40:24 by diogribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_numcount(int nb)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	c;
-
-	c = 0;
-	if (nb <= 0)
-		c++;
-	while (nb)
-	{
-		nb /= 10;
-		c++;
-	}
-	return (c);
-}
-
-static void	ft_revnbr(int n, int len, int i, char *str)
-{
-	while (i < len)
-	{
-		str[len - 1] = n % 10 + '0';
-		n /= 10;
-		len--;
-	}
-}
-
-char	*ft_itoa(int n)
-{
-	char	*str;
-	int		len;
+	char	**str;
 	int		i;
 
-	len = ft_numcount(n);
 	str = (char *)malloc((len + 1) * sizeof(char));
-	if (!str)
+	if (!str || !s)
 		return (NULL);
 	i = 0;
-	if (n == -2147483648)
-	{
-		str[i++] = '-';
-		str[i++] = '2';
-		n = 147483648;
-	}
-	if (n < 0)
-	{
-		str[i++] = '-';
-		n *= -1;
-	}
-	ft_revnbr(n, len, i, str);
-	str[len] = '\0';
+	while (i < len && s[start + i])
+		str[i++] = s[start + i];
+	str[i] = '\0';
 	return (str);
 }

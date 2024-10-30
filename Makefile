@@ -36,13 +36,23 @@ SRCS	= ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_striteri.c \
 		ft_strmapi.c \
-		ft_itoa.c
+		ft_itoa.c \
+		ft_substr.c \
+		ft_split.c \
+		ft_strjoin.c \
+		ft_strtrim.c
+
+BONUS_SRCS	= 
 
 #transformacao#
 OBJ = $(SRCS:.c=.o)
+BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 
 #Regras#
 all: $(NAME)
+
+bonus: all
+		$(BONUS_OBJ)
 
 clean: 
 		$(RM) $(OBJ)
@@ -56,8 +66,11 @@ re: fclean all
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
+$(BONUS): $(BONUS_OBJ)
+	$(NAME) $(BONUS_OBJ)
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 #Anti-Confusao#
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

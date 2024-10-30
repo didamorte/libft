@@ -85,4 +85,16 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 /*passa um int para string*/
 char	*ft_itoa(int n);
+/*cria uma substring apartir de outra string*/
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+/*divide uma string em arrays separados por c*/
+char	**ft_split(char const *s, char c);
+/*concatena s1 e s2 usando malloc*/
+char	*ft_strjoin(char const *s1, char const *s2);
+/*corta os caraters especificos duma string no inicio e no fim*/
+char	*ft_strtrim(char const *s1, char const *set);
+
+/* BONUS */
+
+/*  */
 #endif
