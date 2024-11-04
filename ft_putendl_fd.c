@@ -17,3 +17,10 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }
+
+/* int main()
+{
+	char	*str = "ola mundo";
+	ft_putendl_fd(str, 1);
+	ft_putstr_fd(str, 1);
+} */

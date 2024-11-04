@@ -24,3 +24,10 @@ char	*ft_strdup(const char *s)
 	ft_memcpy(d, s, i);
 	return (d);
 }
+/* int main()
+{
+	char	*str = "ola mundo";
+	char	*dup = ft_strdup(str);
+	printf("%s", dup);
+	free(dup);
+} */

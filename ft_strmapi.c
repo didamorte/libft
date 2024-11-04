@@ -31,3 +31,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	tmp[i] = '\0';
 	return (tmp);
 }
+
+/* char to_lowercase(unsigned int i, char c) {
+	return (ft_tolower(c) + (i % 2));
+}
+
+int main()
+{
+	char	str[] = "OlA MuNdO";
+	printf("%s", ft_strmapi(str, to_lowercase));
+} */

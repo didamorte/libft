@@ -63,3 +63,9 @@ char	*ft_itoa(int n)
 	str[len] = '\0';
 	return (str);
 }
+
+/* int main()
+{
+	char	*str = ft_itoa(12345678);
+	printf("%s", str);
+} */

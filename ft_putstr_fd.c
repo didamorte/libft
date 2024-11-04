@@ -23,3 +23,9 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+
+/* int main()
+{
+	char	*str = "ola mundo";
+	ft_putstr_fd(str, 1);
+} */

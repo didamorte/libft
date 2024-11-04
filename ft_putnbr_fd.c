@@ -34,3 +34,8 @@ void	ft_putnbr_fd(int nb, int fd)
 		ft_putchar_fd((nb + '0'), fd);
 	}
 }
+
+/* int main()
+{
+	ft_putnbr_fd(20293498, 1);
+} */

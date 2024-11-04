@@ -26,3 +26,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
+/* int main()
+{
+	char	str[] = "ola mundo";
+	ft_memset(str, 'a', ft_strlen(str));
+	printf("%s", str);
+} */

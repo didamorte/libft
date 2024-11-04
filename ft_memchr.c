@@ -26,3 +26,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/* int main()
+{
+	char	str[] = "ola mundo";
+	printf("%s", (char *)ft_memchr(str, 'm', ft_strlen(str)));
+} */

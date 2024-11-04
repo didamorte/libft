@@ -42,7 +42,15 @@ SRCS	= ft_isalpha.c \
 		ft_strjoin.c \
 		ft_strtrim.c
 
-BONUS_SRCS	= 
+BONUS_SRCS	= ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
 
 #transformacao#
 OBJ = $(SRCS:.c=.o)
@@ -52,7 +60,7 @@ BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 all: $(NAME)
 
 bonus: all
-		$(BONUS_OBJ)
+		$(BONUS)
 
 clean: 
 		$(RM) $(OBJ)

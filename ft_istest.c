@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_istest.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diogribe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 18:56:01 by diogribe          #+#    #+#             */
-/*   Updated: 2024/10/25 16:25:20 by diogribe         ###   ########.fr       */
+/*   Created: 2024/11/04 17:43:51 by diogribe          #+#    #+#             */
+/*   Updated: 2024/11/04 17:43:51 by diogribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
-{
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
-}
-
 /* int main()
 {
-	char	a = 'A';
-	printf("%c", a);
+	printf("%d", ft_isalnum('1'));
+	printf("%d", ft_isalpha('a'));
+	printf("%d", ft_isascii(' '));
+	printf("%d", ft_isdigit('8'));
+	printf("%d", ft_isprint('@'));
 } */

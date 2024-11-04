@@ -36,3 +36,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+/* int main()
+{
+	char	*str = "bom dia povo, como estao";
+	printf("%s", ft_strnstr(str, "povo", ft_strlen(str)));
+} */

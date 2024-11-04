@@ -24,3 +24,9 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&*s);
 	return (NULL);
 }
+
+/* int main()
+{
+	char	*str = "ola mundo";
+	printf("%s", ft_strchr(str, 'm'));
+} */

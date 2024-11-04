@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diogribe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 18:56:01 by diogribe          #+#    #+#             */
-/*   Updated: 2024/10/25 16:25:20 by diogribe         ###   ########.fr       */
+/*   Created: 2024/11/01 01:00:39 by diogribe          #+#    #+#             */
+/*   Updated: 2024/11/01 01:00:39 by diogribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_lstsize(t_list *lst)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
 
 /* int main()
 {
-	char	a = 'A';
-	printf("%c", a);
+	t_list	*list = NULL;
+	t_list	*node;
+
+	node = ft_lstnew((void *)"12345");
+	ft_lstadd_front(&list, node);
+
+	node = ft_lstnew((void *)"1234");
+	ft_lstadd_front(&list, node);
+
+	node = ft_lstnew((void *)"123");
+	ft_lstadd_front(&list, node);
+
+	printf("%d", ft_lstsize(list));
 } */

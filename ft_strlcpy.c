@@ -27,3 +27,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return ((size_t)ft_strlen(src));
 }
+
+/* int main()
+{
+	char	*str = "ola mundo";
+	char	copy[20];
+	int i = ft_strlcpy(copy, str, sizeof(copy));
+	printf("%s, %d", copy, i);
+} */

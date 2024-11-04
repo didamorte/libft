@@ -26,3 +26,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		s++;
 	}
 }
+/* void to_lowercase(unsigned int i, char *c) 
+{
+	if (i % 2 == 0)
+		*c = ft_tolower(*c);
+}
+
+int main()
+{
+	char	str[] = "OLA MUNDO";
+	ft_striteri(str, to_lowercase);
+	printf("%s", str);
+} */

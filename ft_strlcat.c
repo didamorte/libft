@@ -34,3 +34,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[j] = '\0';
 	return (d_len + s_len);
 }
+
+/* int main()
+{
+	char	*str = "ola mundo";
+	char	cat[17] = "Boas, ";
+	ft_strlcat(cat, str, sizeof(cat));
+	printf("%s", cat);
+} */

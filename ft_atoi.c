@@ -35,3 +35,9 @@ int	ft_atoi(const char *nptr)
 	}
 	return (nbr * i);
 }
+
+/* int main()
+{
+	char	*str = "-2345672";
+	printf("%d", ft_atoi(str));
+} */

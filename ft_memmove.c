@@ -26,3 +26,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return (dest);
 }
+
+/* int main()
+{
+	char	*str = "ola mundo";
+	char	dest[20];
+	ft_memmove(dest, str, ft_strlen(str));
+	printf("%s", dest);
+} */

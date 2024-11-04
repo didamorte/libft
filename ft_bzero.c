@@ -24,3 +24,10 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
+
+/* int main()
+{
+	char	str[] = "ola mundo";
+	ft_bzero(str, ft_strlen(str));
+	printf("vazia: %s", str);
+} */

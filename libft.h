@@ -96,5 +96,28 @@ char	*ft_strtrim(char const *s1, char const *set);
 
 /* BONUS */
 
-/*  */
+/* Lista */
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+/*cria um node(elemento da lista)*/
+t_list	*ft_lstnew(void *content);
+/*adiciona um node no inicio da linked list*/
+void	ft_lstadd_front(t_list **lst, t_list *new);
+/*conta o numero de nodes*/
+int		ft_lstsize(t_list *lst);
+/*retorna o ultimo node da lista*/
+t_list	*ft_lstlast(t_list *lst);
+/*adiciona um node no fim da linked list*/
+void	ft_lstadd_back(t_list **lst, t_list *new);
+/*apaga 1 node*/
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+/*apaga 1 node e todos pra frente*/
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+/*aplica uma função aos nodes da lista*/
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+/*aplica uma funçao aos nodes da lista alocando outra*/
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif

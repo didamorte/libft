@@ -22,3 +22,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(tmp, nmemb * size);
 	return (tmp);
 }
+
+/* int main()
+{
+	char	*str;
+	str = ft_calloc(5, sizeof(char));
+	printf("%p\n", str);
+	str = "povo\0";
+	printf("%s", str);
+} */

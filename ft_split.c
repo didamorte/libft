@@ -37,7 +37,7 @@ static void	*ft_free(char **words, int i)
 	return (NULL);
 }
 
-static char	**ft_fill_words(char **words, char *s, char c)
+static char	**ft_fill_words(char **words, char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -72,3 +72,12 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_fill_words(words, s, c));
 }
+
+/* int main()
+{
+	char	*str = "ola mundo";
+	char	**strs = ft_split(str, ' ');
+	int		i = sizeof(strs);
+	for (int j = 0; j < i; j++)
+		printf("%s\n", strs[j]);
+} */

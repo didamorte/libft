@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diogribe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 14:40:24 by diogribe          #+#    #+#             */
-/*   Updated: 2024/10/30 14:40:24 by diogribe         ###   ########.fr       */
+/*   Created: 2024/11/04 18:55:07 by diogribe          #+#    #+#             */
+/*   Updated: 2024/11/04 18:55:07 by diogribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*str;
-	size_t	i;
-
-	str = (char *)malloc((len + 1) * sizeof(char));
-	if (!str || !s)
+	if (!lst)
 		return (NULL);
-	i = 0;
-	while (i < len && s[start + i])
+	while (lst->next != NULL)
 	{
-		str[i] = s[start + i];
-		i++;
+		lst = lst->next;
 	}
-	str[i] = '\0';
-	return (str);
+	return (lst);
 }
 
 /* int main()
 {
-	char	*str = "ola povo";
-	char	*sub_str = ft_substr(str, 4, ft_strlen(str));
-	printf("%s", sub_str);
+	t_list	*list = NULL;
+	t_list	*node;
+
+	node = ft_lstnew((void *)"12345");
+	ft_lstadd_front(&list, node);
+
+	node = ft_lstnew((void *)"1234");
+	ft_lstadd_front(&list, node);
+
+	node = ft_lstnew((void *)"123");
+	ft_lstadd_front(&list, node);
+
+	printf("first: %s\n", (char *)node->content);
+	node = ft_lstlast(list);
+	printf("last: %s\n", (char *)node->content);
 } */

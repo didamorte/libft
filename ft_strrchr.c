@@ -27,3 +27,9 @@ char	*ft_strrchr(const char *s, int c)
 		lc = (char *)&*s;
 	return (lc);
 }
+
+/* int main()
+{
+	char	*str = "ola mano";
+	printf("%s", ft_strchr(str, ' '));
+} */
