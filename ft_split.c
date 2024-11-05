@@ -6,7 +6,7 @@
 /*   By: diogribe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:00:43 by diogribe          #+#    #+#             */
-/*   Updated: 2024/10/29 17:00:43 by diogribe         ###   ########.fr       */
+/*   Updated: 2024/11/05 13:37:10 by diogribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_word_count(char const *s, char c)
 	i = 1;
 	while (*s)
 	{
-		while (*s == c)
+		while (*s == c && *s)
 			s++;
 		if (*s)
 			i++;
@@ -31,8 +31,9 @@ static int	ft_word_count(char const *s, char c)
 
 static void	*ft_free(char **words, int i)
 {
-	while (i--)
-		free(words[i]);
+	while (--i)
+		if (words[i])
+			free(words[i]);
 	free(words);
 	return (NULL);
 }
@@ -67,17 +68,27 @@ char	**ft_split(char const *s, char c)
 {
 	char	**words;
 
-	words = (char **)malloc((ft_word_count(s, c) + 1) * sizeof(char *));
+	if (!s)
+		return (NULL);
+	words = (char **)malloc(ft_word_count(s, c) * sizeof(char *));
 	if (!words)
 		return (NULL);
 	return (ft_fill_words(words, s, c));
 }
-
-/* int main()
+/* 
+int main()
 {
-	char	*str = "ola mundo";
+	char	*str = "hello!";
 	char	**strs = ft_split(str, ' ');
-	int		i = sizeof(strs);
-	for (int j = 0; j < i; j++)
-		printf("%s\n", strs[j]);
+	int i = 0;
+	if (strs)
+	{
+		while (strs && strs[i] != NULL)
+		{
+			printf("%s\n", strs[i]);
+			free(strs[i]);
+			i++;
+		}
+	}
+	free(strs);
 } */

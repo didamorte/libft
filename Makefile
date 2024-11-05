@@ -59,11 +59,11 @@ BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 #Regras#
 all: $(NAME)
 
-bonus: all
-		$(BONUS)
+bonus: $(NAME) $(BONUS_OBJ)
+	$(AR) $(ARFLAGS) $(NAME) $(BONUS_OBJ)
 
 clean: 
-		$(RM) $(OBJ)
+		$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean 
 		$(RM) $(NAME)
@@ -73,9 +73,6 @@ re: fclean all
 #Compilacao#
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
-
-$(BONUS): $(BONUS_OBJ)
-	$(NAME) $(BONUS_OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
